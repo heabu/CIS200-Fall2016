@@ -18,12 +18,18 @@
     <ClInclude Include="IntNode.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="List.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DoublyLinkedList.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="IntNode.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="List.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

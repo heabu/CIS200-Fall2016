@@ -1,4 +1,5 @@
 #include "IntNode.h"
+#include "List.h"
 #include <iostream>
 
 using namespace std;
@@ -25,7 +26,7 @@ void printBackwards(IntNode* head)
 
 int main()
 {
-	IntNode* head = new IntNode(0);
+	/*IntNode* head = new IntNode(0);
 	head->previous = head;
 	head->next = head;
 
@@ -37,5 +38,28 @@ int main()
 	print(head);
 	printBackwards(head);
 
+	*/
+
+	List myList;
+
+	myList.Append(1);
+	myList.Append(2);
+
+	cout << myList.At(0) << endl;
+	cout << myList.At(1) << endl;
+	//cout << myList.At(10) << endl;
+
+	myList.Set(1, 20);
+
+	cout << myList.At(0) << endl;
+	cout << myList.At(1) << endl;
+
+	myList.RemoveByValue(20);
+
+	cout << myList.At(0) << endl;
+	cout << myList.At(1) << endl;
+
 	system("pause");
+
+	return 0;
 }
