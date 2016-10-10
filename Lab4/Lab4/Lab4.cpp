@@ -68,7 +68,14 @@ int main()
 
 	deepCopy(head, newHead);
 
-	head->value = 'Z';
+	cout << "Changing head list to all Z:" << endl;
+	ListRec* current = head;
+	while (current != nullptr)
+	{
+		current->value = 'Z';
+		current = current->next;
+	}
+
 	cout << "Printing head:" << endl;
 	print(head);
 	cout << endl;
