@@ -1,12 +1,12 @@
 #pragma once
 class Circle {
 public:
-	Circle();
+	Circle( double r);
 	double circumference();
-	double area();
+	virtual double area();
 	void setRadius(double radius);
 	double getRadius();
-	double getVolume();
+	virtual double getVolume();
 	const double PI = 3.14159;
 
 private:

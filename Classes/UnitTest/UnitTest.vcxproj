@@ -98,7 +98,7 @@
     <Link>
       <SubSystem>Windows</SubSystem>
       <AdditionalLibraryDirectories>$(VCInstallDir)UnitTest\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>C:\Users\Eric\CareEv\GitHub\CIS200-Fall2016\Classes\Classes\Debug\Circle.obj;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>C:\Users\Eric\CareEv\GitHub\CIS200-Fall2016\Classes\Classes\Debug\Circle.obj;C:\Users\Eric\CareEv\GitHub\CIS200-Fall2016\Classes\Classes\Debug\Cylinder.obj;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">

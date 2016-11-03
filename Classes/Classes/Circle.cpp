@@ -1,8 +1,8 @@
 #include "Circle.h"
 
-Circle::Circle()
+Circle::Circle( double r)
 {
-	setRadius(0.0);
+	setRadius(r);
 }
 
 double Circle::circumference()
