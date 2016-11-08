@@ -6,13 +6,39 @@ using namespace std;
 
 class GenericItem {
 public:
-	GenericItem();
-	GenericItem(string name, int quantity);
-	void SetName(string newName);
-	string GetName();
-	void SetQuantity(int newQty);
-	int GetQuantity();
-	virtual void PrintItem();
+	GenericItem()
+	{
+		GenericItem("", 0);
+	}
+
+	GenericItem(string name, int quantity)
+	{
+		SetName(name);
+		SetQuantity(quantity);
+	}
+
+	void SetName(string newName) {
+		itemName = newName;
+	};
+
+	string GetName()
+	{
+		return itemName;
+	}
+
+	void SetQuantity(int newQty) {
+		itemQuantity = newQty;
+	};
+
+	int GetQuantity()
+	{
+		return itemQuantity;
+	}
+
+	void PrintItem() {
+		cout << itemName << " " << itemQuantity << endl;
+	};
+
 
 protected:
 	string itemName;

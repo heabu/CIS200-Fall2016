@@ -5,13 +5,24 @@
 
 class ProduceItem : public GenericItem { // Derived from GenericItem
 public:
-	ProduceItem(string name, int quantity, string expirationDate);
-	
-	void SetExpiration(string newDate);
+	ProduceItem(string name, int quantity, string expirationDate) : GenericItem(name, quantity)
+	{
+		SetExpiration(expirationDate);
+	}
 
-	string GetExpiration();
+	void SetExpiration(string newDate) {
+		expirationDate = newDate;
+	};
 
-	void PrintItem();
+	string GetExpiration() {
+		return expirationDate;
+	};
+
+	void PrintItem() {
+		cout << itemName << " " << itemQuantity
+			<< " (Expires: " << expirationDate << ")"
+			<< endl;
+	};
 
 private:
 	string expirationDate;
