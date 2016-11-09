@@ -84,9 +84,9 @@ namespace UnitTests
 			today.year = 2016;
 
 			Date yesterday;
-			today.day = 7;
-			today.month = 11;
-			today.year = 2016;
+			yesterday.day = 7;
+			yesterday.month = 11;
+			yesterday.year = 2016;
 			
 			fifthB.setValuea(today);
 			fifthB.setValueb(yesterday);
