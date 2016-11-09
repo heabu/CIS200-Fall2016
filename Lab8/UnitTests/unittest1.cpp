@@ -15,7 +15,7 @@ namespace UnitTests
 	{
 	public:
 		
-		TEST_METHOD(TestMaxfuncInts)
+		TEST_METHOD(MaxfuncInts)
 		{
 			const int size = 5;
 			int ints[size];
@@ -27,7 +27,7 @@ namespace UnitTests
 			Assert::AreEqual(13, maxfunc<int>(ints, size) );
 		}
 
-		TEST_METHOD(TestMaxfuncDoubles)
+		TEST_METHOD(MaxfuncDoubles)
 		{
 			const int size = 5;
 			double doubles[size];
@@ -39,7 +39,7 @@ namespace UnitTests
 			Assert::AreEqual(8.1, maxfunc<double>(doubles, size));
 		}
 
-		TEST_METHOD(TestMaxfuncStrings)
+		TEST_METHOD(MaxfuncStrings)
 		{
 			const int size = 5;
 			string strings[size];
@@ -52,52 +52,68 @@ namespace UnitTests
 			Assert::AreEqual(expectedValue, maxfunc<string>(strings, size));
 		}
 
-		TEST_METHOD(TestA)
+		TEST_METHOD(BFloat)
 		{
-			A<int> intA;
-			intA.setValuea(10);
-			Assert::AreEqual(10, intA.getValuea());
+			B<float> b;
+			b.setValuea(1.34f);
+			b.setValueb(3.14f);
+			Assert::AreEqual(1.34f, b.getValuea());
+			Assert::AreEqual(3.14f, b.getValueb());
 		}
 
-		TEST_METHOD(TestB)
+		TEST_METHOD(BInt)
 		{
-			B<int> intB;
-			intB.setValueb(10);
-			Assert::AreEqual(10, intB.getValueb());
+			B<int> b;
+			b.setValuea(1);
+			b.setValueb(3);
+			Assert::AreEqual(1, b.getValuea());
+			Assert::AreEqual(3, b.getValueb());
 		}
 
-		TEST_METHOD(TestBAccessingA)
+		TEST_METHOD(BChar)
 		{
-			B<int> intB;
-			intB.setValueb(10);
-			intB.setValuea(20);
-			Assert::AreEqual(20, intB.getValuea());
+			B<char> b;
+			b.setValuea('a');
+			b.setValueb('c');
+			Assert::AreEqual('a', b.getValuea());
+			Assert::AreEqual('c', b.getValueb());
 		}
 
-		TEST_METHOD(TestingDateStruct)
+		TEST_METHOD(BString)
+		{
+			B<string> b;
+			b.setValuea("good");
+			b.setValueb("morning");
+			string good = "good";
+			string morning = "morning";
+			Assert::AreEqual(good, b.getValuea());
+			Assert::AreEqual(morning, b.getValueb());
+		}
+
+		TEST_METHOD(BDateStruct)
 		{
 			B<Date> fifthB;
 			
-			Date today;
-			today.day = 8;
-			today.month = 11;
-			today.year = 2016;
+			Date first;
+			first.day = 27;
+			first.month = 10;
+			first.year = 2014;
 
-			Date yesterday;
-			yesterday.day = 7;
-			yesterday.month = 11;
-			yesterday.year = 2016;
+			Date second;
+			second.day = 2;
+			second.month = 11;
+			second.year = 2014;
 			
-			fifthB.setValuea(today);
-			fifthB.setValueb(yesterday);
+			fifthB.setValuea(first);
+			fifthB.setValueb(second);
 			
-			Assert::AreEqual( 8, fifthB.getValuea().day);
-			Assert::AreEqual( 11, fifthB.getValuea().month);
-			Assert::AreEqual( 2016, fifthB.getValuea().year);
+			Assert::AreEqual( 27, fifthB.getValuea().day);
+			Assert::AreEqual( 10, fifthB.getValuea().month);
+			Assert::AreEqual( 2014, fifthB.getValuea().year);
 
-			Assert::AreEqual(7, fifthB.getValueb().day);
+			Assert::AreEqual(2, fifthB.getValueb().day);
 			Assert::AreEqual(11, fifthB.getValueb().month);
-			Assert::AreEqual(2016, fifthB.getValueb().year);
+			Assert::AreEqual(2014, fifthB.getValueb().year);
 			
 		}
 		
