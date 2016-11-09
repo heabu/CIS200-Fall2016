@@ -1,5 +1,13 @@
 #pragma once
 
+struct Date
+{
+	int day;
+	int month;
+	int year;
+};
+
+
 template <typename T>
 T maxfunc(T values[], int size)
 {

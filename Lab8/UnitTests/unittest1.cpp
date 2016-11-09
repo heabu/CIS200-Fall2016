@@ -73,6 +73,33 @@ namespace UnitTests
 			intB.setValuea(20);
 			Assert::AreEqual(20, intB.getValuea());
 		}
+
+		TEST_METHOD(TestingDateStruct)
+		{
+			B<Date> fifthB;
+			
+			Date today;
+			today.day = 8;
+			today.month = 11;
+			today.year = 2016;
+
+			Date yesterday;
+			today.day = 7;
+			today.month = 11;
+			today.year = 2016;
+			
+			fifthB.setValuea(today);
+			fifthB.setValueb(yesterday);
+			
+			Assert::AreEqual( 8, fifthB.getValuea().day);
+			Assert::AreEqual( 11, fifthB.getValuea().month);
+			Assert::AreEqual( 2016, fifthB.getValuea().year);
+
+			Assert::AreEqual(7, fifthB.getValueb().day);
+			Assert::AreEqual(11, fifthB.getValueb().month);
+			Assert::AreEqual(2016, fifthB.getValueb().year);
+			
+		}
 		
 	};
 }

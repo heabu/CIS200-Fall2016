@@ -10,7 +10,7 @@ private:
 public:
 	B()
 	{
-		valueb = 0;
+		
 	}
 	B(B & original)
 	{

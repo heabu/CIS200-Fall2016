@@ -8,7 +8,7 @@ private:
 public:
 	A()
 	{
-		valuea = 0;
+		
 	};
 	A(A & original)
 	{
