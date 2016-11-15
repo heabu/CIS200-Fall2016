@@ -1,4 +1,9 @@
 #include "Polygon.hpp"
+#include <math.h>
+#include <stdexcept>
+#include <string>
+
+using namespace std;
 
 #pragma once
 class RightTriangle :public Polygon 
@@ -12,8 +17,14 @@ public:
 	{
 		if (sideNum == 2) 
 		{
-			if (get(0) < value && get(1) < value)
-				Polygon::set(2, value);
+			if (pow(value, 2) != (pow(get(0), 2) + pow(get(1), 2)) )
+			{
+				throw runtime_error("invalid side length: "
+					+ to_string(value) + " is not the square root of "
+					+ to_string(get(0)) + "^2 + " + to_string(get(1)) + "^2 - expected: "
+					+ to_string(sqrt((pow(get(0), 2) + pow(get(1), 2)))));
+			}
+			Polygon::set(2, value);
 		}
 		else
 		{
