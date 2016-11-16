@@ -16,6 +16,16 @@ int main() {
 	shapes[0]->set(1, 10);
 	shapes[1] = new Square;
 	shapes[1]->set(0, 5);
+
+	try 
+	{
+		shapes[1]->set(4, 5);
+	}
+	catch (runtime_error & e)
+	{
+		cout << "caught runtime error: " << e.what() << endl;
+	}
+
 	shapes[2] = new RightTriangle;
 
 
